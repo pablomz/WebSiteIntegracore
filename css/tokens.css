@@ -1,0 +1,86 @@
+/* IntegraCore · Tokens v1.0 (23 nov 2026)
+   Fuente de verdad: sistema de diseño IntegraCore. No inventes colores fuera de esta lista.
+   Tema claro por defecto; añade .theme-dark a una sección (o a <html>) para el tema oscuro. */
+
+:root {
+  /* Paleta de marca */
+  --ic-navy: #161924;
+  --ic-paper: #EEF1F4;
+  --ic-white: #FFFFFF;
+  --ic-teal: #27ABBD;       /* inicio del degradé; acento de texto sobre oscuro */
+  --ic-teal-ink: #17707C;   /* acento de texto sobre claro (5:1 sobre paper) */
+  --ic-green: #4ABF69;      /* la decisión: punto, ✓, recomendado. Nunca texto sobre claro */
+  --ic-ochre: #D4A04A;      /* ocre lápiz: marcas de trabajo sobre oscuro */
+  --ic-ochre-ink: #8C6212;  /* ocre lápiz: marcas de trabajo sobre claro */
+  --ic-blue: #0145D2;       /* SÓLO dentro del ícono del logo. No usar en la web */
+  --ic-grey-900: #2D3748;
+  --ic-grey-700: #4A5568;
+  --ic-grey-500: #8A97AB;
+  --ic-grey-300: #C5CEDA;
+  --ic-grey-200: #D5DCE4;
+  --ic-navy-600: #3A4358;
+  --ic-navy-700: #1F2433;
+
+  /* Roles · tema claro */
+  --surface: var(--ic-paper);
+  --surface-raised: var(--ic-white);
+  --ink: var(--ic-navy);
+  --ink-muted: var(--ic-grey-900);
+  --ink-subtle: var(--ic-grey-700);
+  --accent: var(--ic-teal-ink);
+  --line: var(--ic-grey-200);
+  --mark: var(--ic-ochre-ink);          /* notas N.0x, líneas guía, vértices, ○ por validar */
+  --construction: var(--ic-ochre-ink);  /* ejes y círculos punteados del nivel método */
+  --signal: var(--ic-green);
+  --btn-bg: var(--ic-navy);
+  --btn-ink: var(--ic-white);
+
+  /* Degradé de la geometría (sólo trazos) */
+  --geo-from: var(--ic-teal);
+  --geo-mid: #36B596;
+  --geo-to: var(--ic-green);
+
+  /* Tipografía. Respaldo si la fuente de marca no carga: Arial y Consolas. */
+  --font-sans: "Instrument Sans", Arial, "Helvetica Neue", sans-serif;
+  --font-mono: "IBM Plex Mono", Consolas, "Courier New", monospace;
+  --fs-display: clamp(2.5rem, 1.6rem + 3.2vw, 3.625rem);  /* 40 → 58 px */
+  --lh-display: 1.07;
+  --fs-h1: clamp(2rem, 1.6rem + 1.4vw, 2.5rem);           /* 32 → 40 px */
+  --fs-h2: clamp(1.5rem, 1.35rem + 0.6vw, 1.75rem);       /* 24 → 28 px */
+  --fs-lead: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);   /* 18 → 20 px */
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-nota: 0.75rem;
+  --fs-etiqueta: 0.8125rem;
+
+  /* Espaciado y forma */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 48px;
+  --space-6: 72px;
+  --radius-none: 0;
+  --radius-pill: 999px;   /* sólo botones y etiquetas de acción */
+  --content-max: 1200px;
+
+  /* Movimiento */
+  --dur-layer: 550ms;                         /* una capa de la geometría */
+  --stagger: 420ms;                           /* entre capas */
+  --ease-draw: cubic-bezier(.25, .7, .3, 1);  /* salida suave, sin rebote */
+}
+
+.theme-dark,
+[data-theme="dark"] {
+  --surface: var(--ic-navy);
+  --surface-raised: var(--ic-navy-700);
+  --ink: var(--ic-white);
+  --ink-muted: var(--ic-grey-300);
+  --ink-subtle: var(--ic-grey-500);
+  --accent: var(--ic-teal);
+  --line: var(--ic-navy-600);
+  --mark: var(--ic-ochre);
+  --construction: var(--ic-ochre);
+  --btn-bg: var(--ic-teal);
+  --btn-ink: var(--ic-navy);
+}

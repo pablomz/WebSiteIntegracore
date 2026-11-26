@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /contacto/confirmacion/
+
+Sitemap: https://integracoretech.com/sitemap.xml
